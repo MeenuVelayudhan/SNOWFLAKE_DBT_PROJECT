@@ -1,0 +1,37 @@
+
+  
+    
+
+create or replace transient table AIRBNB.gold.facts
+    
+    
+    
+    
+    
+
+    as (
+
+select
+    GOLD_OBT.LISTING_ID,GOLD_OBT.HOST_ID,GOLD_OBT.BOOKING_ID,GOLD_OBT.TOTAL_AMOUNT,GOLD_OBT.SERVICE_FEE,GOLD_OBT.CLEANING_FEE,GOLD_OBT.BATHROOMS,GOLD_OBT.PRICE_PER_NIGHT,GOLD_OBT.RESPONSE_RATE
+
+from
+
+    
+        AIRBNB.GOLD.OBT as GOLD_OBT
+    
+
+    
+        left join AIRBNB.GOLD.DIM_LISTINGS as DIM_LISTINGS
+            on DIM_LISTINGS.listing_id=GOLD_OBT.listing_id
+    
+
+    
+        left join AIRBNB.GOLD.DIM_HOSTS as DIM_HOSTS
+            on DIM_HOSTS.host_id=GOLD_OBT.host_id
+    
+
+    )
+;
+
+
+  
