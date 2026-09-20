@@ -1,15 +1,9 @@
-Welcome to your new dbt project!
+# Snowflake DBT Data Engineering Project
 
-### Using the starter project
+## Project Overview
 
-Try running the following commands:
-- dbt run
-- dbt test
+This project demonstrates an end-to-end data engineering pipeline built using Snowflake and dbt.
 
+The project follows a layered data architecture where source data is transformed through Bronze, Silver, and Gold layers. dbt is used to develop, test, and manage the data transformation workflows.
 
-### Resources:
-- Learn more about dbt [in the docs](https://docs.getdbt.com/docs/introduction)
-- Check out [Discourse](https://discourse.getdbt.com/) for commonly asked questions and answers
-- Join the [chat](https://community.getdbt.com/) on Slack for live discussions and support
-- Find [dbt events](https://events.getdbt.com) near you
-- Check out [the blog](https://blog.getdbt.com/) for the latest news on dbt's development and best practices
+The main objective of this project is to transform raw data into clean, reliable, and analytics-ready datasets for reporting and business analysis.
