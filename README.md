@@ -111,6 +111,7 @@ SNOWFLAKE_DBT_PROJECT/
 └── uv.lock
 ```
 ## Folder Description
+```text
 models/bronze/ – Raw data transformation models
 models/silver/ – Cleaned and standardized datasets
 models/gold/ – Business-ready analytical models
@@ -122,5 +123,6 @@ analyses/ – Ad-hoc analytical SQL
 dbt_project.yml – dbt project configuration
 pyproject.toml – Python project and dependency configuration
 uv.lock – Locked Python dependencies
+```
 
 
