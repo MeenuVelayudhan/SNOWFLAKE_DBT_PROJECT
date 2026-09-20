@@ -92,7 +92,7 @@ The key business entities include:
 - **Dimensions** – Historical and descriptive business entities
 - **Facts** – Analytical measures used for reporting
 
-## Data Quality
+## Data Quality-- HAVE NOT ADDED ALL THE STEPS IN THE PROJECT YET
 
 Data quality is an important part of the pipeline. Airbnb data loaded from AWS into Snowflake is validated during the dbt transformation process.
 
