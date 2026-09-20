@@ -37,8 +37,7 @@ The objective of this project is to build a structured data transformation pipel
 
 The project follows a layered data architecture:
 
-```text
-Raw Airbnb Data
+   Raw Airbnb Data
        |
        v
    Bronze Layer
@@ -52,15 +51,15 @@ Raw Airbnb Data
        v
 Analytics & Reporting
 
-Bronze Layer
+## Bronze Layer
 
 The Bronze layer contains the raw source data with minimal transformations.
 
-Silver Layer
+## Silver Layer
 
 The Silver layer cleans, standardizes, and transforms the raw data into structured datasets.
 
-Gold Layer
+## Gold Layer
 
 The Gold layer contains business-ready datasets designed for analytics and reporting.
 
@@ -88,7 +87,6 @@ The project includes checks for:
 
 ## Project Structure
 
-```text
 SNOWFLAKE_DBT_PROJECT/
 │
 ├── aws_dbt_snowflake_project/
@@ -110,7 +108,7 @@ SNOWFLAKE_DBT_PROJECT/
 ├── README.md
 └── uv.lock
 
-Folder Description
+## Folder Description
 models/bronze/ – Raw data transformation models
 models/silver/ – Cleaned and standardized datasets
 models/gold/ – Business-ready analytical models
@@ -122,3 +120,5 @@ analyses/ – Ad-hoc analytical SQL
 dbt_project.yml – dbt project configuration
 pyproject.toml – Python project and dependency configuration
 uv.lock – Locked Python dependencies
+
+
