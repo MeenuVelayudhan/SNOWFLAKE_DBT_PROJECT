@@ -124,5 +124,126 @@ dbt_project.yml – dbt project configuration
 pyproject.toml – Python project and dependency configuration
 uv.lock – Locked Python dependencies
 ```
+## Data Transformation Workflow
+
+The data flows through multiple transformation layers using Snowflake and dbt.
+
+### 1. Source Data
+
+Raw Airbnb datasets containing information about listings, hosts, and bookings are used as the source data.
+
+### 2. Bronze Layer
+
+The Bronze layer performs the initial transformation of the source data.
+
+Key activities include:
+
+- Loading source data into Snowflake
+- Standardizing column names
+- Applying basic data type transformations
+- Creating initial dbt models
+
+Example models:
+
+- `bronze_listings`
+- `bronze_hosts`
+- `bronze_bookings`
+
+### 3. Silver Layer
+
+The Silver layer applies more detailed data cleansing and business transformations.
+
+Key activities include:
+
+- Removing duplicate records
+- Handling NULL values
+- Standardizing data formats
+- Applying business rules
+- Joining related datasets
+- Creating clean analytical entities
+
+### 4. Gold Layer
+
+The Gold layer produces curated datasets for analytics and reporting.
+
+These models combine the transformed Silver-layer data into business-ready datasets that can be consumed by downstream reporting and analytics applications.
+
+### 5. Data Quality Validation
+
+dbt tests are executed against the transformed datasets to validate data quality and consistency.
+
+```text
+Source Data
+     ↓
+Snowflake
+     ↓
+Bronze Models
+     ↓
+Silver Models
+     ↓
+Gold Models
+     ↓
+Data Quality Tests
+     ↓
+Analytics / Reporting
+```
+
+## dbt Snapshots & Historical Tracking
+
+dbt snapshots are used to track historical changes in important Airbnb business entities.
+
+The snapshot models capture changes to records over time instead of only maintaining the latest version of the data.
+
+This allows the project to answer questions such as:
+
+- When did a listing change?
+- What was the previous value?
+- When did the change become effective?
+- What is the current version of the record?
+
+Example snapshot models:
+
+- `dim_listings`
+- `dim_hosts`
+- `dim_bookings`
+
+The snapshots maintain historical versions using fields such as:
+
+- `dbt_valid_from`
+- `dbt_valid_to`
+- `dbt_scd_id`
+
+This approach supports **Slowly Changing Dimension (SCD) Type 2** requirements and provides historical traceability for analytical use cases.
+
+## Key Project Features
+
+- End-to-end Airbnb data engineering pipeline using Snowflake and dbt
+- Bronze, Silver, and Gold layered data architecture
+- SQL-based data transformation and data modeling
+- Data cleansing and standardization
+- dbt data quality testing and validation
+- dbt snapshots for historical data tracking
+- Slowly Changing Dimension (SCD) Type 2 implementation
+- Analytical models for listings, hosts, and bookings
+- Reusable dbt models and macros
+- Version control using Git and GitHub
+- Python environment and dependency management using uv
+
+## Security
+
+Sensitive credentials and environment-specific configuration are not stored in the GitHub repository.
+
+The following files and directories are excluded using `.gitignore`:
+
+- `profiles.yml`
+- `.env`
+- `.venv/`
+- `target/`
+- `logs/`
+- `dbt_packages/`
+- `*.pem`
+- `*.key`
+
+Snowflake credentials and other sensitive configuration should be stored securely in the local environment and should never be committed to source control.
 
 
