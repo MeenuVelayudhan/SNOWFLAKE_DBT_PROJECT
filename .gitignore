@@ -1,10 +1,41 @@
 # Python-generated files
 __pycache__/
-*.py[oc]
+*.py[cod]
+*.pyo
+*.pyd
+
+# Build / distribution
 build/
 dist/
 wheels/
-*.egg-info
+*.egg-info/
 
 # Virtual environments
-.venv
+.venv/
+venv/
+env/
+
+# dbt
+target/
+dbt_packages/
+logs/
+
+# Environment / credentials
+.env
+.env.*
+!.env.example
+
+# dbt profiles / credentials
+profiles.yml
+
+# Snowflake credentials / keys
+*.pem
+*.key
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
