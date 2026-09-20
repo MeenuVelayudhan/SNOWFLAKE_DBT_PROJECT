@@ -44,12 +44,6 @@ Airbnb Source Data
        v
 Analytics & Reporting
 ```
-
-### 4. Data Transformation Workflow
-
-Change the beginning to:
-
-```markdown
 ## Data Transformation Workflow
 
 The data flows from AWS into Snowflake and then through multiple dbt transformation layers.
@@ -166,14 +160,6 @@ SNOWFLAKE_DBT_PROJECT/
 ├── README.md
 └── uv.lock
 ```
-
----
-
-### 5. Key Project Features
-
-You already added this, but use the updated version:
-
-```markdown
 ## Key Project Features
 
 - End-to-end Airbnb data engineering pipeline using AWS, Snowflake, and dbt
